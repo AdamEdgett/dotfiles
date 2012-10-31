@@ -1,7 +1,3 @@
-#Shortcuts
-alias :q="exit"
-alias c="clear"
-
 export EDITOR="vim"
 alias aedit=" $EDITOR ~/.zsh/aliases.zsh; source ~/.zsh/aliases.zsh"
 alias fedit=" $EDITOR ~/.zsh/functions.zsh; source ~/.zsh/functions.zsh"
@@ -9,8 +5,13 @@ alias pedit=" $EDITOR ~/.zsh/private.zsh; source ~/.zsh/private.zsh"
 alias vedit=" $EDITOR ~/.vimrc"
 alias gedit=" $EDITOR ~/.gitconfig"
 
+# Shortcuts #
+#############
+alias c='clear'
+alias :q='exit'
+
 ##### standard aliases (start with a space to be ignored in history)
-alias ls='ls -1GP'
+alias ls=' ls -1GP'
 # The OSX way for ls colors.
 export CLICOLOR=1
 export LSCOLORS="gxfxcxdxbxegedabagacad"
@@ -23,6 +24,7 @@ alias vs=" v **/*(.)"         # show all files in all subdirs plain in a list
 
 alias p=' ps aux | grep'
 alias g='git'
+alias t='tar -xvf'
 alias d=' dirs -v'
 alias ka="killall"
 

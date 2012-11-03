@@ -1,0 +1,15 @@
+[color]
+	ui = true
+[alias]
+        co=checkout
+        s=status
+        d=diff
+        l=log
+[core]
+	excludesfile = ~/.gitignore_global
+[mergetool]
+	keepBackup = true
+[help]
+	autocorrect = 1
+[include]
+        path = ~/.gituser

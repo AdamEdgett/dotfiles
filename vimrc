@@ -8,30 +8,23 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 "{{{Misc Settings
 
-" Necesary  for lots of cool vim things
 set nocompatible
 
-" This shows what you are typing as a command.  I love this!
-set showcmd
-set autochdir
-
-" Folding Stuffs
-" set foldmethod=marker
-" set foldmarker={,}
-
-" Needed for Syntax Highlighting and stuff
+" Syntax Highlighting
 filetype on
 filetype plugin on
 syntax enable
 
-" Who doesn't like autoindent?
+" Indentation and spacing
 set autoindent
-
-" Spaces are better than a tab character
 set expandtab
 set smarttab
 set shiftwidth=4
 set softtabstop=4
+
+" Control options
+set mouse=a
+set backspace=2
 
 " Use english for spellchecking, but don't spellcheck by default
 if version >= 700
@@ -39,29 +32,27 @@ if version >= 700
    set nospell
 endif
 
-" Enable mouse support in console
-set mouse=a
-
-" Got backspace?
-set backspace=2
-
-" Line Numbers PWN!
+" Line options
 set number
+set nostartofline
 
-set showmatch
-
-" Incremental searching is sexy
+" Searching
 set incsearch
-
-" Highlight things that we find with the search
 set hlsearch
+set showmatch
+set ignorecase
+set smartcase
 
+" Command options
+set showcmd
 set wildmenu
+set cmdheight=2
+set autochdir
 
+" Display options
 colorscheme dusk
 set background=dark
-set statusline=
-set statusline+=%f\
-set statusline+=%10((%l,%c)%)\            " line and column
-set statusline+=%P                        " percentage of file
+set laststatus=2
+set statusline=%t\ %r\ " Left side
+set statusline+=%=%10((%l,%c)%)\ %P " Right side
 "}}}

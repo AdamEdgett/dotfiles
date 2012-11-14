@@ -165,3 +165,9 @@ gr() {
     vcsroot=`/home/seebi/.vim/scripts/vcsroot.sh`
     echo $vcsroot && cd $vcsroot
 }
+
+# ls on every cd
+function chpwd() {
+    emulate -L zsh
+    ls -1GP
+}

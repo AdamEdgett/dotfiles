@@ -1,38 +1,32 @@
-typeset -ga sources
-#sources+="$HOME/.zsh/colors.zsh" # maybe we do not need this anymore
-sources+="$HOME/.zsh/options.zsh"
-sources+="$HOME/.zsh/prompt.zsh"
-sources+="$HOME/.zsh/functions.zsh"
-sources+="$HOME/.zsh/aliases.zsh"
-sources+="$HOME/.zsh/completion.zsh"
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.zsh
 
-# highlights the live command line
-# Cloned From: git://github.com/nicoulaj/zsh-syntax-highlighting.git
-sources+="$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="custom"
 
-# provides the package name of a non existing executable
-# (sudo apt-get install command-not-found)
-#sources+="/etc/zsh_command_not_found"
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-# Bash and Zsh completion support for git-flow
-# https://github.com/bobthecow/git-flow-completion
-sources+="$HOME/.zsh/git-flow-completion/git-flow-completion.zsh"
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-# Autojump: a cd command that learns
-# Cloned From: git://github.com/joelthelion/autojump.git
-sources+="$HOME/.zsh/autojump/autojump.zsh"
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-# Check for a system specific file
-systemFile=`uname -s | tr "[:upper:]" "[:lower:]"`
-sources+="$HOME/.zsh/$systemFile.zsh"
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# Finally include the private.zsh file
-sources+="$HOME/.zsh/private.zsh"
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
 
-# try to include all sources
-foreach file (`echo $sources`)
-    if [[ -a $file ]]; then
-        source $file
-    fi
-end
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(autojump brew django git github osx pip python rails3 ruby svn textmate)
 
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...

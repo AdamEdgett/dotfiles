@@ -91,24 +91,6 @@ function promptSetMultiplexerTabTitle () {
 }
 add-zsh-hook preexec promptSetMultiplexerTabTitle
 
-# setup tmux environment (context + status)
-# TODO: shorten the path variable
-# TODO: remove sudo if available...
-function tmuxChangeDirectory () {
-    # set the tmux status line
-    if [[ "$TMUX" != "" ]]; then
-        newMailCountTool="/home/seebi/bin/scripts/newMailCount.py"
-        tmux set-option -g status-right "$PWD ✉ #($newMailCountTool /var/mail/seebi)" >/dev/null
-    fi
-
-    if [[ $VCS_TYPE == 'hg' ]]; then
-        #tmux kill-pane -t 1
-        #tmux split-window -h -l 40 "while true; do clear; date; echo; hg xlog-small -l 5 || exit; sleep 600; done;"
-        #tmux select-pane -t 0
-    fi
-}
-add-zsh-hook chpwd tmuxChangeDirectory
-
 # remove the line after the prompt on execution
 # http://unix.stackexchange.com/questions/1022/is-it-possible-to-display-stuff-below-the-prompt-at-a-prompt
 function eraseSecondLine () {

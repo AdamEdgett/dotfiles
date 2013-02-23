@@ -25,7 +25,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew django git github osx pip python rails3 ruby svn textmate)
+plugins=(brew django git git-extras github osx pip python rails3 ruby svn textmate)
 
 source $ZSH/oh-my-zsh.sh
 

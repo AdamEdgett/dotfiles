@@ -4,6 +4,7 @@ alias fedit=" $EDITOR ~/.zsh/custom/functions.zsh; source ~/.zshrc"
 alias pedit=" $EDITOR ~/.zsh/custom/private.zsh; source ~/.zshrc"
 alias vedit=" $EDITOR ~/.vimrc"
 alias gedit=" $EDITOR ~/.gitconfig"
+alias finder="open ."
 
 # Shortcuts #
 #############

@@ -3,7 +3,7 @@
 [alias]
         ci = commit
         co = checkout
-        s = status -s
+        s = status -sb
         d = diff
         r = remote
         b = branch
@@ -11,8 +11,10 @@
         graph = !git l --graph
         mylog = !git l --author=\"$(git config user.name)\"
         shove = push origin HEAD
+        ready = rebase -i @{u}
+        staged = diff --staged
 [core]
-	excludesfile = ~/.gitignore_global
+        excludesfile = ~/.gitignore_global
 [mergetool]
 	keepBackup = true
 [log]

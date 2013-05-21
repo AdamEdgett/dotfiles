@@ -162,5 +162,5 @@ translate() {
 # ls on every cd
 function chpwd() {
     emulate -L zsh
-    ls -1GP
+    ls -1G
 }

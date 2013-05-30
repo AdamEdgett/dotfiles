@@ -1,0 +1,24 @@
+Config { font = "xft:Monospace:pixelsize=11"
+       , bgColor      = "black"
+       , fgColor      = "grey"
+       , position     = TopW L 97
+       , lowerOnStart = True
+       , commands     = [
+                          Run Date "%a %b %_d %l:%M" "date" 10
+                        , Run Weather "KBOS" [ "-t", "<tempF>°F" ] 36000
+                        , Run Cpu [ "-H","50","--high","red" ] 10
+                        , Run Memory [ "-t","Mem: <usedratio>%" ] 1000
+                        , Run Battery [ "-t", "<left>%<acstatus>"
+                                      , "-L", "10", "-H", "80"
+                                      , "-l", "red", "-h", "green"
+                                      , "--", "-O", "ϟ", "-o", ""
+                                      , "-f", "ADP0/online"
+                                      ] 10
+                        , Run ThermalZone 0 [ "-t", "<temp>°C"
+                                            , "-H", "80", "-h", "red"
+                                            ] 1000
+                        , Run StdinReader ]
+       , sepChar      = "%"
+       , alignSep     = "}{"
+       , template     = "%StdinReader% }        <fc=#ee9a00>%date%</fc>   %KBOS% {  %cpu% | %memory% | %thermal0% | %battery%"
+       }

@@ -14,7 +14,7 @@
         ready = rebase -i @{u}
         staged = diff --staged
 [core]
-        excludesfile = ~/.gitignore_global
+        excludesfile = ~/.gitignore
 [http]
         sslVerify = false
 [mergetool]

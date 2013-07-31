@@ -36,4 +36,4 @@
 [help]
 	autocorrect = 1
 [include]
-        path = ~/.gituser
+        path = ~/.gitlocal

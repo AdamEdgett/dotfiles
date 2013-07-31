@@ -3,7 +3,9 @@
 [alias]
         ci = commit
         co = checkout
-        s = status -sb
+        pl = pull
+        ph = push
+        s = status -sbu
         d = diff
         r = remote
         b = branch
@@ -13,6 +15,11 @@
         shove = push origin HEAD
         ready = rebase -i @{u}
         staged = diff --staged
+        assume = update-index --assume-unchanged
+        unassume = update-index --no-assume-unchanged
+        assumed = !git ls-files -v | grep "^[[:lower:]]" | sed 's/^h //g'
+        amend = commit --amend -C HEAD
+        undo = reset --soft HEAD^
 [core]
         excludesfile = ~/.gitignore
 [http]

@@ -33,6 +33,7 @@ myConfig = defaultConfig
         , terminal        = "terminator"
         , borderWidth     = 1
         , focusedBorderColor = "grey"
+        , normalBorderColor = "black"
         , modMask         = mod4Mask }
         `additionalKeysP`
         [ -- Apps

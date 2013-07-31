@@ -52,6 +52,8 @@ myConfig = defaultConfig
         , ("M-x l",                  spawn "libreoffice")
         , ("M-x M-l",                spawn "libreoffice")
         -- Power commands
+        , ("M-<Escape> M-d",         spawn "sleep .5; xset dpms force off")
+        , ("M-<Escape> M-l",         spawn "sleep .5; xscreensaver-command --lock")
         , ("M-<Escape> M-s",         spawn "sudo pm-suspend")
         , ("M-<Escape> M-r",         spawn "sudo reboot")
         , ("M-<Escape> M-o",         spawn "sudo shutdown now")

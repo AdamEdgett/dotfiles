@@ -26,6 +26,8 @@
         sslVerify = false
 [mergetool]
 	keepBackup = true
+[push]
+        default = simple
 [diff]
         algorithm = patience
 [log]

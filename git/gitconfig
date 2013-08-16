@@ -15,11 +15,14 @@
         shove = push origin HEAD
         ready = rebase -i @{u}
         staged = diff --staged
-        assume = update-index --assume-unchanged
-        unassume = update-index --no-assume-unchanged
-        assumed = !git ls-files -v | grep "^[[:lower:]]" | sed 's/^h //g'
         amend = commit --amend -C HEAD
         undo = reset --soft HEAD^
+        skip = update-index --skip-worktree
+        unskip = update-index --no-skip-worktree
+        skipped = !git ls-files -v | grep "^S " | sed 's/^S //g'
+        assume = update-index --assume-unchanged
+        unassume = update-index --no-assume-unchanged
+        assumed = !git ls-files -v | grep "^h " | sed 's/^h //g'
 [core]
         excludesfile = ~/.gitignore
 [http]

@@ -7,15 +7,6 @@ then
     git clone --quiet  https://github.com/robbyrussell/oh-my-zsh.git ~/.zsh
 fi
 
-# Pathogen
-read -p "Do you want to install vim-pathogen? [Y/n] " -n 1
-echo ""
-if [[ $REPLY =~ ^[Yy]?$ ]]
-then
-    mkdir -p ~/.vim/autoload ~/.vim/bundle
-    curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-fi
-
 # Zsh
 read -p "Do you want to setup config files for zsh? [Y/n] " -n 1
 echo ""
@@ -42,6 +33,16 @@ echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
     ln -s $PWD/vim/vimrc ~/.vimrc
+fi
+
+# Vundle
+read -p "Do you want to install vundle and vim plugins? [Y/n] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]?$ ]]
+then
+    mkdir -p ~/.vim/bundle
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim +BundleInstall +qall
 fi
 
 # Xmonad

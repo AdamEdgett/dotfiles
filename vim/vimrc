@@ -9,6 +9,15 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'flazz/vim-colorschemes'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/syntastic'
+Bundle 'ervandew/supertab'
+Bundle 'mileszs/ack.vim'
+
 filetype plugin indent on
 
 """""""""""

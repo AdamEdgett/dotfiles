@@ -27,6 +27,8 @@ alias g='git'
 alias t='tar -xvf'
 alias d=' dirs -v'
 alias ka="killall"
+alias mv="mv -i"
+alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 
 alias ..=' cd ..'
 alias ...=' cd ..; cd ..'

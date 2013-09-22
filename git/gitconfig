@@ -1,5 +1,5 @@
 [color]
-	ui = true
+        ui = true
 [alias]
         ci = commit
         co = checkout
@@ -7,6 +7,7 @@
         ph = push
         s = status -sbu
         d = diff
+        wd = diff --word-diff
         r = remote
         b = branch
         l = log --pretty=format:'%Cred%h%Creset%x09  %Cgreen%ad%Creset%x09%C(bold blue)%an%Creset: %s'
@@ -23,12 +24,14 @@
         assume = update-index --assume-unchanged
         unassume = update-index --no-assume-unchanged
         assumed = !git ls-files -v | grep "^h " | sed 's/^h //g'
+        changed = diff --name-only --diff-filter=M
 [core]
+        autocrlf = true
         excludesfile = ~/.gitignore
 [http]
         sslVerify = false
 [mergetool]
-	keepBackup = true
+        keepBackup = true
 [push]
         default = simple
 [diff]
@@ -39,6 +42,6 @@
 [rerere]
         enabled = 1
 [help]
-	autocorrect = 1
+        autocorrect = 1
 [include]
         path = ~/.gitlocal

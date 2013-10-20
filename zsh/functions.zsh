@@ -1,10 +1,25 @@
+# Custom functions
+
+# ls on every cd
+function chpwd() {
+    emulate -L zsh
+    ls -1G
+}
+
+# moves file to trash
+# assumes trash is located at ~/.Trash
+function trash() {
+    mv $1 ~/.Trash/.
+}
+
+
 # @author     Sebastian Tramp <mail@sebastian.tramp.name>
 # @license    http://opensource.org/licenses/gpl-license.php
 #
 # functions and key bindings to that functions
 #
 
-# strg+x,s adds sudo to the line
+# ctrl+x,s adds sudo to the line
 # Zsh Buch p.159 - http://zshbuch.org/
 run-with-sudo() { LBUFFER="sudo $LBUFFER" }
 zle -N run-with-sudo
@@ -14,12 +29,6 @@ bindkey '^Xs' run-with-sudo
 # http://www.commandlinefu.com/commands/view/7139/top-ten-memory-hogs
 memtop() {ps -eorss,args | sort -nr | pr -TW$COLUMNS | head}
 zle -N memtop
-
-tmux-hglog() {
-	tmux kill-pane -t 1
-	tmux split-window -h -l 40 "while true; do clear; date; echo; hg xlog-small -l 5 || exit; sleep 600; done;"
-	tmux select-pane -t 0
-}
 
 # tmux-neww-in-cwd - open a new shell with same cwd as calling pane
 # http://chneukirchen.org/dotfiles/bin/tmux-neww-in-cwd
@@ -46,11 +55,11 @@ tmux-neww-in-cwd() {
 # Escape potential tarbombs
 # http://www.commandlinefu.com/commands/view/6824/escape-potential-tarbombs
 etb() {
-	l=$(tar tf $1);
-	if [ $(echo "$l" | wc -l) -eq $(echo "$l" | grep $(echo "$l" | head -n1) | wc -l) ];
-	then tar xf $1;
-	else mkdir ${1%.t(ar.gz||ar.bz2||gz||bz||ar)} && tar xvf $1 -C ${1%.t(ar.gz||ar.bz2||gz||bz||ar)};
-	fi ;
+        l=$(tar tf $1);
+        if [ $(echo "$l" | wc -l) -eq $(echo "$l" | grep $(echo "$l" | head -n1) | wc -l) ];
+        then tar xf $1;
+        else mkdir ${1%.t(ar.gz||ar.bz2||gz||bz||ar)} && tar xvf $1 -C ${1%.t(ar.gz||ar.bz2||gz||bz||ar)};
+        fi ;
 }
 
 # show newest files
@@ -68,37 +77,11 @@ buf () {
     fi
 }
 
-atomtitles () { curl --silent $1 | xmlstarlet sel -N atom="http://www.w3.org/2005/Atom" -t -m /atom:feed/atom:entry -v atom:title -n}
-
-
-function printHookFunctions () {
-    print -C 1 ":::pwd_functions:" $chpwd_functions
-    print -C 1 ":::periodic_functions:" $periodic_functions
-    print -C 1 ":::precmd_functions:" $precmd_functions
-    print -C 1 ":::preexec_functions:" $preexec_functions
-    print -C 1 ":::zshaddhistory_functions:" $zshaddhistory_functions
-    print -C 1 ":::zshexit_functions:" $zshexit_functions
-}
-
-# reloads all functions
-# http://www.zsh.org/mla/users/2002/msg00232.html
-r() {
-    local f
-    f=(~/.zsh/functions.d/*(.))
-    unfunction $f:t 2> /dev/null
-    autoload -U $f:t
-}
-
 # activates zmv
 autoload zmv
 # noglob so you don't need to quote the arguments of zmv
 # mmv *.JPG *.jpg
 alias mmv='noglob zmv -W'
-
-# start a webcam for screencast
-function webcam () {
-    mplayer -cache 128 -tv driver=v4l2:width=350:height=350 -vo xv tv:// -noborder -geometry "+1340+445" -ontop -quiet 2>/dev/null >/dev/null
-}
 
 # Rename files in a directory in an edited list fashion
 # http://www.commandlinefu.com/commands/view/7818/
@@ -119,10 +102,6 @@ function clock () {
     done &
 }
 
-function apt-import-key () {
-    gpg --keyserver subkeys.pgp.net --recv-keys $1 | gpg --armor --export $1 | sudo apt-key add -
-}
-
 # create a new script, automatically populating the shebang line, editing the
 # script, and making it executable.
 # http://www.commandlinefu.com/commands/view/8050/
@@ -136,31 +115,4 @@ shebang() {
     # in case the new script is in path, this throw out the command hash table and
     # start over  (man zshbuiltins)
     rehash
-}
-
-# a rough equivalent to "hg out"
-# http://www.doof.me.uk/2011/01/08/list-outgoing-changesets-in-git/
-git-out() {
-    for i in $(git push -n $* 2>&1 | awk '$1 ~ /[a-f0-9]+\.\.[a-f0-9]+/ { print $1; }')
-    do
-        git xlog $i
-    done
-}
-
-# Query Wikipedia via console over DNS
-# http://www.commandlinefu.com/commands/view/2829
-wp() {
-    dig +short txt ${1}.wp.dg.cx
-}
-
-# translate via google language tools (more lightweight than leo)
-# http://www.commandlinefu.com/commands/view/5034/
-translate() {
-    wget -qO- "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$1&langpair=$2|${3:-en}" | sed 's/.*"translatedText":"\([^"]*\)".*}/\1\n/'
-}
-
-# ls on every cd
-function chpwd() {
-    emulate -L zsh
-    ls -1G
 }

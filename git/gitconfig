@@ -28,6 +28,8 @@
 [core]
         autocrlf = true
         excludesfile = ~/.gitignore
+[branch]
+        autosetuprebase = always
 [http]
         sslVerify = false
 [mergetool]

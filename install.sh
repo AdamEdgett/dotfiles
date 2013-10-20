@@ -41,7 +41,7 @@ echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
     mkdir -p ~/.vim/bundle
-    git --quiet clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone --quiet https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
 fi
 

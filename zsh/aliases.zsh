@@ -5,6 +5,15 @@ alias pedit=" $EDITOR ~/.zsh/custom/private.zsh; source ~/.zshrc"
 alias vedit=" $EDITOR ~/.vimrc"
 alias gedit=" $EDITOR ~/.gitconfig"
 
+# Directories #
+###############
+desk=~/Desktop
+docs=~/Documents
+down=~/Downloads
+pics=~/Pictures
+musc=~/Music
+vids=~/Videos
+
 # Shortcuts #
 #############
 alias c="clear"

@@ -7,6 +7,7 @@
         ph = push
         s = status -sbu
         d = diff
+        sd = diff --staged
         wd = diff --word-diff
         r = remote
         b = branch

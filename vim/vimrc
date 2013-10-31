@@ -17,6 +17,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'bling/vim-airline'
 
 filetype plugin indent on
@@ -46,7 +47,8 @@ set cursorline          " current line indicator
 set scrolloff=14        " adds padding to the current line
 set showmatch           " highlights matching bracket
 
-colorscheme elflord
+colorscheme mustang
+let g:colors_name='mustang'
 set laststatus=2
 set noshowmode          " hide the current mode
 set ttimeoutlen=100

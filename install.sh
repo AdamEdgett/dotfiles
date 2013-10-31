@@ -33,6 +33,7 @@ echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
     ln -s $PWD/vim/vimrc ~/.vimrc
+    ln -s $PWD/vim/ftplugin ~/.vim/ftplugin
 fi
 
 # Vundle

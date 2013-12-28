@@ -37,9 +37,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Extended plugins
-# plugins=(archlinux django gem git git-extras github pip python rails3 ruby sublime svn systemd virtualenv virtualenvwrapper web-search)
+# plugins=(archlinux django gem git git-extras github pip python rails ruby sublime svn systemd virtualenv virtualenvwrapper web-search)
 # Basic plugins
-plugins=(django gem git git-extras github pip python rails3 ruby sublime svn)
+plugins=(django gem git git-extras github pip python rails ruby sublime svn)
 
 source $ZSH/oh-my-zsh.sh
 

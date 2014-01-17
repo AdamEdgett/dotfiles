@@ -27,7 +27,7 @@
         assumed = !git ls-files -v | grep "^h " | sed 's/^h //g'
         changed = diff --name-only --diff-filter=M
 [core]
-        autocrlf = true
+        autocrlf = input
         excludesfile = ~/.gitignore
 [branch]
         autosetuprebase = always
@@ -35,8 +35,6 @@
         sslVerify = false
 [mergetool]
         keepBackup = true
-[push]
-        default = simple
 [diff]
         algorithm = patience
 [log]
@@ -46,5 +44,9 @@
         enabled = 1
 [help]
         autocorrect = 1
+[user]
+        name = Adam Edgett
+        email = AdamEdgett@gmail.com
+        username = AdamEdgett
 [include]
         path = ~/.gitlocal

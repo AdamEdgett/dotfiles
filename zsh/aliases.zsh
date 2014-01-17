@@ -14,6 +14,8 @@ pics=~/Pictures
 musc=~/Music
 vids=~/Videos
 
+sysd=/usr/lib/systemd/system
+
 # Shortcuts #
 #############
 alias c="clear"

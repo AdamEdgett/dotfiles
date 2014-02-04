@@ -19,38 +19,10 @@ function trash() {
 # functions and key bindings to that functions
 #
 
-# ctrl+x,s adds sudo to the line
-# Zsh Buch p.159 - http://zshbuch.org/
-run-with-sudo() { LBUFFER="sudo $LBUFFER" }
-zle -N run-with-sudo
-bindkey '^Xs' run-with-sudo
-
 # Top ten memory hogs
 # http://www.commandlinefu.com/commands/view/7139/top-ten-memory-hogs
 memtop() {ps -eorss,args | sort -nr | pr -TW$COLUMNS | head}
 zle -N memtop
-
-# tmux-neww-in-cwd - open a new shell with same cwd as calling pane
-# http://chneukirchen.org/dotfiles/bin/tmux-neww-in-cwd
-tmux-neww-in-cwd() {
-    SIP=$(tmux display-message -p "#S:#I:#P")
-
-    PTY=$(tmux server-info |
-    egrep flags=\|bytes |
-    awk '/windows/ { s = $2 }
-    /references/ { i = $1 }
-    /bytes/ { print s i $1 $2 } ' |
-    grep "$SIP" |
-    cut -d: -f4)
-
-    PTS=${PTY#/dev/}
-
-    PID=$(ps -eao pid,tty,command --forest | awk '$2 == "'$PTS'" {print $1; exit}')
-
-    DIR=$(readlink /proc/$PID/cwd)
-
-    tmux neww "cd '$DIR'; $SHELL"
-}
 
 # Escape potential tarbombs
 # http://www.commandlinefu.com/commands/view/6824/escape-potential-tarbombs

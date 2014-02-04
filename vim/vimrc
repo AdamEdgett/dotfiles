@@ -34,6 +34,12 @@ set mouse=a             " enables mouse handling
 set backspace=2         " allow backspacing over indent, eol, and start
 set pastetoggle=<F2>    " map key for toggling pastemode
 nnoremap ; :
+map <Leader>ve :tabedit ~/.vimrc
+map <Leader>vs :source ~/.vimrc
+map f <Leader><Leader>f
+map F <Leader><Leader>F
+map <Leader>ws :w !sudo tee %
+noremap <CR> :noh<CR><CR>
 imap jj <Esc>
 imap kk <Esc>
 imap jk <Esc>
@@ -75,6 +81,7 @@ let g:airline#extensions#whitespace#enabled = 1
 " Nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 """""""""""""""""""""""""""

@@ -35,12 +35,32 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Extended plugins
-# plugins=(archlinux django gem git git-extras github pip python rails ruby sublime svn systemd virtualenv virtualenvwrapper web-search)
-# Basic plugins
-plugins=(django gem git git-extras github pip python rails ruby sublime svn)
+plugins=(django gem git git-extras github pip python rails rsync ruby sublime svn)
+
+# Linux
+if [[ "$(uname)" = "Linux" ]] then
+    plugins+=(archlinux sudo systemd)
+# Windows
+elif [[ "$(uname)" = "CYGWIN*" ]] then
+    plugins+=()
+# Mac
+elif [[ "$(uname)" = "Darwin" ]] then
+    plugins+=(brew osx textmate sudo)
+fi
+
+# virtualenv
+if [[ -d $HOME/.virtualenvs ]] then
+    plugins+=(virtualenv virtualenvwrapper)
+fi
+# rbenv
+if [[ -d $HOME/.rbenv ]] then
+    plugins+=(rbenv)
+    export PATH=$PATH:$HOME/.rbenv/bin/
+fi
+
+# Include any local changes
+if [[ -a ~/.zshlocal ]] then
+    source ~/.zshlocal
+fi
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...

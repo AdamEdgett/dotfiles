@@ -35,6 +35,8 @@ then
     mkdir -p ~/.vim/bundle
     git clone --quiet https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
+    mkdir -p ~/.vim/colors
+    ln -s ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
 fi
 
 # Vim

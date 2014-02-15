@@ -52,6 +52,13 @@ fi
 if [[ -d $HOME/.virtualenvs ]] then
     plugins+=(virtualenv virtualenvwrapper)
 fi
+# gems
+if [[ -d $HOME/.gem/ruby ]] then
+    for rbbin in `find $HOME/.gem/ruby -mindepth 1 -maxdepth 1 -type d`
+    do
+        export PATH=$PATH:$rbbin/bin
+    done
+fi
 # rbenv
 if [[ -d $HOME/.rbenv ]] then
     plugins+=(rbenv)

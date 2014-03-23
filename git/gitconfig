@@ -1,7 +1,7 @@
 [color]
         ui = true
 [alias]
-        ci = commit
+        c = commit --verbose
         co = checkout
         pl = pull
         ph = push

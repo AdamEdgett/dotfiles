@@ -35,11 +35,11 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(django gem git git-extras github pip python rails rsync ruby sublime svn)
+plugins=(bower django gem git gitignore git-extras github npm pip python rails rsync ruby sublime svn wakeonlan zsh_reload)
 
 # Linux
 if [[ "$(uname)" = "Linux" ]] then
-    plugins+=(archlinux sudo systemd)
+    plugins+=(archlinux command-not-found sudo systemd)
 # Windows
 elif [[ "$(uname)" = "CYGWIN*" ]] then
     plugins+=()

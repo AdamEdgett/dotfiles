@@ -49,6 +49,14 @@ then
     ln -s $PWD/vim/ftplugin ~/.vim/ftplugin
 fi
 
+# Editorconfig
+read -p "Do you want to setup the editorconfig file? [Y/n] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]?$ ]]
+then
+    ln -s $PWD/editorconfig ~/.editorconfig
+fi
+
 # Xmonad
 read -p "Do you want to setup config files for xmonad? [Y/n] " -n 1
 echo ""

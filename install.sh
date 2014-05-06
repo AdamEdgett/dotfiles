@@ -27,18 +27,6 @@ then
     ln -s $PWD/git/gitignore ~/.gitignore
 fi
 
-# Vundle
-read -p "Do you want to install vundle and vim plugins? [Y/n] " -n 1
-echo ""
-if [[ $REPLY =~ ^[Yy]?$ ]]
-then
-    mkdir -p ~/.vim/bundle
-    git clone --quiet https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    vim +BundleInstall +qall
-    mkdir -p ~/.vim/colors
-    ln -s ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
-fi
-
 # Vim
 read -p "Do you want to setup config files for vim? [Y/n] " -n 1
 echo ""
@@ -47,6 +35,18 @@ then
     mkdir -p ~/.vim
     ln -s $PWD/vim/vimrc ~/.vimrc
     ln -s $PWD/vim/ftplugin ~/.vim/ftplugin
+fi
+
+# Vundle
+read -p "Do you want to install vundle and vim plugins? [Y/n] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]?$ ]]
+then
+    mkdir -p ~/.vim/bundle
+    git clone --quiet https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
+    mkdir -p ~/.vim/colors
+    ln -s ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
 fi
 
 # Editorconfig

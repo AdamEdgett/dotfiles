@@ -37,13 +37,19 @@ set visualbell          " use visual bell
 set mouse=a             " enables mouse handling
 set backspace=2         " allow backspacing over indent, eol, and start
 set pastetoggle=<F2>    " map key for toggling pastemode
+
 nnoremap ; :
+nmap , \
 map <Leader>ve :tabedit ~/.vimrc
 map <Leader>vs :source ~/.vimrc
 map f <Leader><Leader>f
 map F <Leader><Leader>F
 map <Leader>ws :w !sudo tee %
+" clears search highlighting
 noremap <CR> :noh<CR><CR>
+" removes trailing spaces with F5
+noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 imap jj <Esc>
 imap kk <Esc>
 imap jk <Esc>
@@ -88,6 +94,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" Markdown
+let g:vim_markdown_folding_disabled=1
+
 """""""""""""""""""""""""""
 " Indentation and spacing "
 """""""""""""""""""""""""""
@@ -96,7 +105,6 @@ set expandtab           " spaces instead of tabs
 set smarttab            " interprets consecutive spaces as tabs
 set shiftwidth=4        " tab = 4 spaces
 set softtabstop=4
-set nowrap              " disables line wrapping
 
 """""""""""""
 " Searching "

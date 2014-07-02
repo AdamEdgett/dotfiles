@@ -24,6 +24,10 @@ alias :q="exit"
 ##### standard aliases (start with a space to be ignored in history)
 alias ls=" ls -1 --color"
 export LSCOLORS="gxfxcxdxbxegedabagacad"
+if [[ "$(uname)" = "Darwin" ]] then
+    alias ls=" ls -1GP"
+    export CLICOLORS=1
+fi
 
 alias l=" ls"
 alias ll=" ls -l"

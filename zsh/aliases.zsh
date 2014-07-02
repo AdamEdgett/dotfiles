@@ -1,4 +1,5 @@
 export EDITOR="vim"
+alias zedit=" $EDITOR ~/.zshrc; source ~/.zshrc"
 alias aedit=" $EDITOR ~/.zsh/custom/aliases.zsh; source ~/.zshrc"
 alias fedit=" $EDITOR ~/.zsh/custom/functions.zsh; source ~/.zshrc"
 alias pedit=" $EDITOR ~/.zsh/custom/private.zsh; source ~/.zshrc"
@@ -33,11 +34,10 @@ alias l=" ls"
 alias ll=" ls -l"
 alias la=" ls -A"
 alias lla=" ls -lA"
-alias v=" clear; ll -g"      # standard directory view
-alias vs=" v **/*(.)"        # show all files in all subdirs plain in a list
 
 alias p=" ps aux | grep"
 alias g="git"
+alias v="vim"
 alias t="tar -xvf"
 alias d=" dirs -v"
 alias ka="killall"

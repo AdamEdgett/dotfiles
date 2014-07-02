@@ -63,6 +63,7 @@ fi
 if [[ -d $HOME/.rbenv ]] then
     plugins+=(rbenv)
     export PATH=$PATH:$HOME/.rbenv/bin/
+    eval "$(rbenv init -)"
 fi
 
 # Include any local changes

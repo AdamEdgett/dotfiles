@@ -1,52 +1,52 @@
 [color]
-        ui = true
+    ui = true
 [alias]
-        c = commit --verbose
-        co = checkout
-        pl = pull
-        ph = push
-        s = status -sbu
-        d = diff
-        sd = diff --staged
-        wd = diff --word-diff
-        r = remote
-        b = branch
-        l = log --pretty=format:'%Cred%h%Creset%x09  %Cgreen%ad%Creset%x09%C(bold blue)%an%Creset: %s'
-        graph = !git l --graph
-        mylog = !git l --author=\"$(git config user.name)\"
-        shove = push origin HEAD
-        ready = rebase -i @{u}
-        staged = diff --staged
-        amend = commit --amend -C HEAD
-        undo = reset --soft HEAD^
-        skip = update-index --skip-worktree
-        unskip = update-index --no-skip-worktree
-        skipped = !git ls-files -v | grep "^S " | sed 's/^S //g'
-        assume = update-index --assume-unchanged
-        unassume = update-index --no-assume-unchanged
-        assumed = !git ls-files -v | grep "^h " | sed 's/^h //g'
-        changed = diff --name-only --diff-filter=M
+    c = commit --verbose
+    co = checkout
+    pl = pull
+    ph = push
+    s = status -sbu
+    d = diff
+    sd = diff --staged
+    wd = diff --word-diff
+    r = remote
+    b = branch
+    l = log --pretty=format:'%Cred%h%Creset%x09  %Cgreen%ad%Creset%x09%C(bold blue)%an%Creset: %s'
+    graph = !git l --graph
+    mylog = !git l --author=\"$(git config user.name)\"
+    shove = push origin HEAD
+    ready = rebase -i @{u}
+    staged = diff --staged
+    amend = commit --amend -C HEAD
+    undo = reset --soft HEAD^
+    skip = update-index --skip-worktree
+    unskip = update-index --no-skip-worktree
+    skipped = !git ls-files -v | grep "^S " | sed 's/^S //g'
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed = !git ls-files -v | grep "^h " | sed 's/^h //g'
+    changed = diff --name-only --diff-filter=M
 [core]
-        autocrlf = input
-        excludesfile = ~/.gitignore
+    autocrlf = input
+    excludesfile = ~/.gitignore
 [branch]
-        autosetuprebase = always
+    autosetuprebase = always
 [http]
-        sslVerify = false
+    sslVerify = false
 [mergetool]
-        keepBackup = true
+    keepBackup = true
 [diff]
-        algorithm = patience
+    algorithm = patience
 [log]
-        date = short
-        abbrevCommit = true
+    date = short
+    abbrevCommit = true
 [rerere]
-        enabled = 1
+    enabled = 1
 [help]
-        autocorrect = 1
+    autocorrect = 1
 [user]
-        name = Adam Edgett
-        email = AdamEdgett@gmail.com
-        username = AdamEdgett
+    name = Adam Edgett
+    email = AdamEdgett@gmail.com
+    username = AdamEdgett
 [include]
-        path = ~/.gitlocal
+    path = ~/.gitlocal

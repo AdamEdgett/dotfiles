@@ -2,6 +2,8 @@
     ui = true
 [alias]
     c = commit --verbose
+    a = add
+    ap = add -p
     co = checkout
     pl = pull
     ph = push

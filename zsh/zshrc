@@ -48,6 +48,11 @@ elif [[ "$(uname)" = "Darwin" ]] then
     plugins+=(brew osx textmate sudo)
 fi
 
+# Custom bin files
+if [[ -d $HOME/.bin ]] then
+    export PATH=$PATH:$HOME/.bin
+fi
+
 # virtualenv
 if [[ -d $HOME/.virtualenvs ]] then
     plugins+=(virtualenv virtualenvwrapper)

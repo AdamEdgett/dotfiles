@@ -1,0 +1,20 @@
+#!/bin/bash
+# Pulls all git repos in a directory
+# If a directory is provided, it uses that directory
+# If no directory is provided, it will use the REPO_DIR env variable
+# Otherwise it uses the current directory
+if [ ! -z "$1" ]; then
+    REPO_DIR=$1
+elif [ -z "$REPO_DIR" ]; then
+    REPO_DIR="$PWD"
+fi
+for repo in `find $REPO_DIR -mindepth 1 -maxdepth 1 -type d`
+do
+    cd $repo
+    if [ -d .git ]; then
+        if  git diff-index --quiet HEAD --; then
+            echo "Pulling "`basename $PWD`
+            git pull
+        fi
+    fi
+done

@@ -18,6 +18,14 @@ then
     ln -s $PWD/zsh/functions.zsh ~/.zsh/custom/functions.zsh
 fi
 
+# Bin
+read -p "Do you want to setup custom bin directory? [Y/n] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]?$ ]]
+then
+    ln -s $PWD/bin ~/.bin
+fi
+
 # Git
 read -p "Do you want to setup config files for git? [Y/n] " -n 1
 echo ""

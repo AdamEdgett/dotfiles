@@ -33,6 +33,7 @@ filetype plugin indent on
 " General "
 """""""""""
 set encoding=utf8       " force utf8 encoding
+set t_Co=256            " enable 256 colors
 set visualbell          " use visual bell
 set mouse=a             " enables mouse handling
 set backspace=2         " allow backspacing over indent, eol, and start
@@ -40,15 +41,16 @@ set pastetoggle=<F2>    " map key for toggling pastemode
 
 nnoremap ; :
 nmap , \
-map <Leader>ve :tabedit ~/.vimrc
-map <Leader>vs :source ~/.vimrc
+map <Leader>ve :tabedit ~/.vimrc<CR>
+map <Leader>vs :source ~/.vimrc<CR>
 map f <Leader><Leader>f
 map F <Leader><Leader>F
-map <Leader>ws :w !sudo tee %
+map <Leader>ws :w !sudo tee %<CR>
 " clears search highlighting
 noremap <CR> :noh<CR><CR>
 " removes trailing spaces with F5
 noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+map gr :tabprev<CR>
 
 imap jj <Esc>
 imap kk <Esc>
@@ -78,9 +80,10 @@ set ttimeoutlen=100
 " Whitespace
 set listchars=tab:→\ ,nbsp:·,trail:$
 set list
+let &colorcolumn=join(range(81,300),",")
+highlight ColorColumn ctermbg=235 guibg=#262626
 
 " Airline
-set t_Co=256
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -119,4 +122,3 @@ set smartcase           " override ignorecase if capital letter is used
 """""""""""""""""""
 set showcmd             " shows command information at bottom
 set wildmenu            " autocomplete commands
-set autochdir           " automatically change directories to current file

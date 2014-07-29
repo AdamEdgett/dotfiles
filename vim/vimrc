@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -92,10 +93,13 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 
 " Nerdtree
-autocmd vimenter * if !argc() | NERDTree | endif
+map <Leader>t :NERDTreeTabsToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <Leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n>  :NERDTreeTabsToggle<CR>
+
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_smart_startup_focus=1
 
 " Markdown
 let g:vim_markdown_folding_disabled=1

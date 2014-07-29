@@ -14,7 +14,7 @@ do
     if [ -d .git ]; then
         if  git diff-index --quiet HEAD --; then
             echo "Pulling "`basename $PWD`
-            git pull
+            git pull | sed "s/^/	/"
         fi
     fi
 done

@@ -5,6 +5,7 @@
     a = add
     ap = add -p
     co = checkout
+    cp = checkout -p
     pl = pull
     ph = push
     s = status -sbu

@@ -102,7 +102,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <C-n>  :NERDTreeTabsToggle<CR>
 
 let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=1
 
 " Markdown
 let g:vim_markdown_folding_disabled=1

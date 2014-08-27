@@ -39,6 +39,9 @@ set visualbell          " use visual bell
 set mouse=a             " enables mouse handling
 set backspace=2         " allow backspacing over indent, eol, and start
 set pastetoggle=<F2>    " map key for toggling pastemode
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
 
 nnoremap ; :
 nmap , \

@@ -9,6 +9,7 @@
     pl = pull
     ph = push
     s = status -sbu
+    sh = stash
     d = diff
     sd = diff --staged
     wd = diff --word-diff

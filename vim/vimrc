@@ -58,6 +58,10 @@ noremap <CR> :noh<CR><CR>
 " removes trailing spaces with F5
 noremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 map gr :tabprev<CR>
+map <S-k> r<CR>k$
+
+map <C-k> :bn<CR>
+map <C-j> :bp<CR>
 
 imap jj <Esc>
 imap kk <Esc>

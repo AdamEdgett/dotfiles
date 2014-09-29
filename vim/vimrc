@@ -130,6 +130,6 @@ set showcmd             " shows command information at bottom
 set wildmenu            " autocomplete commands
 
 " Load local config
-if filereadable(glob("$HOME/.vimrclocal"))
-    source $HOME/.vimrclocal
+if filereadable(glob("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
 endif

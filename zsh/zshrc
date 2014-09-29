@@ -75,8 +75,8 @@ if [[ -d $HOME/.rbenv ]] then
 fi
 
 # Include any local changes
-if [[ -a ~/.zshlocal ]] then
-    source ~/.zshlocal
+if [[ -a $HOME/.zshrc.local ]] then
+    source $HOME/.zshrc.local
 fi
 
 source $ZSH/oh-my-zsh.sh

@@ -30,6 +30,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+[*.coffee]
+indent_style = space
+indent_size = 2
+
 [{.gitconfig,.gitignore,gitcommit}]
 indent_style = space
 indent_size = 4

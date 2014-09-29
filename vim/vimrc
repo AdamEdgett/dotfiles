@@ -129,4 +129,7 @@ set smartcase           " override ignorecase if capital letter is used
 set showcmd             " shows command information at bottom
 set wildmenu            " autocomplete commands
 
-source $HOME/.vimrclocal
+" Load local config
+if filereadable(glob("$HOME/.vimrclocal"))
+    source $HOME/.vimrclocal
+endif

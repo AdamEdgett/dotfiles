@@ -38,13 +38,13 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(bower django gem git gitignore git-extras github npm pip python rails rsync ruby sublime svn wakeonlan zsh_reload)
 
 # Linux
-if [[ "$(uname)" = "Linux" ]] then
+if [ "$(uname)" = "Linux" ]; then
     plugins+=(archlinux command-not-found sudo systemd)
 # Windows
-elif [[ "$(uname)" = "CYGWIN*" ]] then
+elif [ "$(uname)" = "CYGWIN*" ]; then
     plugins+=()
 # Mac
-elif [[ "$(uname)" = "Darwin" ]] then
+elif [ "$(uname)" = "Darwin" ]; then
     plugins+=(brew osx textmate sudo)
 fi
 

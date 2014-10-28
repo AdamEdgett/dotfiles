@@ -44,6 +44,8 @@ set backspace=2         " allow backspacing over indent, eol, and start
 set pastetoggle=<F2>    " map key for toggling pastemode
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set foldmethod=syntax
+set foldlevelstart=20
 
 
 nnoremap ; :

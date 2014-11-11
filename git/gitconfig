@@ -10,12 +10,15 @@
     ph = push
     s = status -sbu
     sh = stash
+    sp = stash --patch
     d = diff
     sd = diff --staged
     wd = diff --word-diff
     r = remote
     b = branch
     l = log --pretty=format:'%Cred%h%Creset%x09  %Cgreen%ad%Creset%x09%C(bold blue)%an%Creset: %s'
+    sha = rev-parse --short HEAD
+    pullall = !pullall
     graph = !git l --graph
     mylog = !git l --author=\"$(git config user.name)\"
     shove = push origin HEAD

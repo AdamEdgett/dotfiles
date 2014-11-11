@@ -65,7 +65,7 @@ map <S-k> r<CR>k$
 
 map <C-k> :bn<CR>
 map <C-j> :bp<CR>
-map <C-i> :bd<CR>
+map <C-h> :bd<CR>
 
 imap jj <Esc>
 imap kk <Esc>

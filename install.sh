@@ -55,6 +55,7 @@ then
     vim +PluginInstall +qall
     mkdir -p ~/.vim/colors
     ln -s ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
+    ln -s ~/.vim/bundle/vim-colors-solarized/colors ~/.vim/colors/vim-colors-solarized
 fi
 
 # Editorconfig

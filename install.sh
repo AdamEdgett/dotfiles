@@ -50,9 +50,9 @@ read -p "Do you want to install vundle and vim plugins? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
-    mkdir -p ~/.vim/bundle
-    git clone --quiet https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+    mkdir -p ~/.vim/plugged
+    git clone --quiet https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug
+    vim +PlugInstall +qall
     mkdir -p ~/.vim/colors
     ln -s ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
     ln -s ~/.vim/bundle/vim-colors-solarized/colors ~/.vim/colors/vim-colors-solarized

@@ -4,35 +4,35 @@ filetype off
 """""""""""
 " Plugins "
 """""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+source ~/.vim/plugged/vim-plug/plug.vim
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'junegunn/vim-plug'
 
-Plugin 'bling/vim-airline'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-Plugin 'mileszs/ack.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'rking/ag.vim'
+Plug 'bling/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'scrooloose/syntastic'
+Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'rking/ag.vim'
 " Specific file types
-Plugin 'tpope/vim-haml'
-Plugin 'groenewege/vim-less'
-Plugin 'ap/vim-css-color'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-haml'
+Plug 'groenewege/vim-less'
+Plug 'ap/vim-css-color'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'plasticboy/vim-markdown'
+Plug 'kchmck/vim-coffee-script'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 """""""""""

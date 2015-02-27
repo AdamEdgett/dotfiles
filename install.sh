@@ -54,8 +54,8 @@ then
     git clone --quiet https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug
     vim +PlugInstall +qall
     mkdir -p ~/.vim/colors
-    ln -s ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
-    ln -s ~/.vim/bundle/vim-colors-solarized/colors ~/.vim/colors/vim-colors-solarized
+    ln -s ~/.vim/plugged/vim-colorschemes/colors ~/.vim/colors/vim-colorschemes
+    ln -s ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/colors/vim-colors-solarized
 fi
 
 # Editorconfig

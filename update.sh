@@ -28,7 +28,7 @@ read -p "Do you want to update vim plugins? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
-    if vim +PluginUpdate +qall
+    if vim +PlugUpdate +qall
     then
         echo "Updated vim plugins"
     fi

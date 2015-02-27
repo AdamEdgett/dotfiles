@@ -23,7 +23,7 @@ then
     fi
 fi
 
-# Vundle
+# Vim-Plug
 read -p "Do you want to update vim plugins? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]

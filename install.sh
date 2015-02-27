@@ -45,8 +45,8 @@ then
     ln -s $PWD/vim/ftplugin ~/.vim/ftplugin
 fi
 
-# Vundle
-read -p "Do you want to install vundle and vim plugins? [Y/n] " -n 1
+# Vim-Plug
+read -p "Do you want to install Vim-Plug and vim plugins? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then

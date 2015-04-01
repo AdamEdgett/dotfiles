@@ -58,6 +58,24 @@ then
     ln -s ~/.vim/plugged/vim-colors-solarized/colors ~/.vim/colors/vim-colors-solarized
 fi
 
+# tmux
+read -p "Do you want to setup config files for tmux? [Y/n] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]?$ ]]
+then
+    ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+fi
+
+# TPM
+read -p "Do you want to install TPM and tmux plugins? [Y/n] " -n 1
+echo ""
+if [[ $REPLY =~ ^[Yy]?$ ]]
+then
+    mkdir -p ~/.tmux/plugins
+    git clone --quiet https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # Editorconfig
 read -p "Do you want to setup the editorconfig file? [Y/n] " -n 1
 echo ""

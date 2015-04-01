@@ -70,8 +70,13 @@ fi
 # rbenv
 if [[ -d $HOME/.rbenv ]] then
     plugins+=(rbenv)
-    export PATH=$PATH:$HOME/.rbenv/bin/
+    export PATH=$PATH:$HOME/.rbenv/bin
     eval "$(rbenv init -)"
+fi
+
+# path fixing for tmux in osx
+if [[ -x /usr/libexec/path_helper ]] then
+    eval `/usr/libexec/path_helper -s`
 fi
 
 # Include any local changes

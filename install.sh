@@ -64,7 +64,6 @@ echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
     ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
-    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 fi
 
 # TPM
@@ -72,8 +71,12 @@ read -p "Do you want to install TPM and tmux plugins? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]
 then
-    mkdir -p ~/.tmux/plugins
-    git clone --quiet https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    mkdir -pv ~/.tmux/plugins
+    git clone --quiet https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
+    tmux start-server
+    tmux new-session -d
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+    tmux kill-server
 fi
 
 # Editorconfig

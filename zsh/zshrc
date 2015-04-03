@@ -38,49 +38,49 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(bower django gem git gitignore git-extras github npm pip python rails rsync ruby sublime svn wakeonlan zsh_reload)
 
 # Linux
-if [ "$(uname)" = "Linux" ]; then
+if [[ "$(uname)" = "Linux" ]]; then
     plugins+=(archlinux command-not-found sudo systemd)
 # Windows
-elif [ "$(uname)" = "CYGWIN*" ]; then
+elif [[ "$(uname)" = "CYGWIN*" ]]; then
     plugins+=()
 # Mac
-elif [ "$(uname)" = "Darwin" ]; then
+elif [[ "$(uname)" = "Darwin" ]]; then
     plugins+=(brew osx textmate sudo)
 fi
 
 # Custom bin files
-if [[ -d $HOME/.bin ]] then
+if [[ -d $HOME/.bin ]]; then
     export PATH=$PATH:$HOME/.bin
 fi
-if [[ -d $HOME/.binprivate ]] then
+if [[ -d $HOME/.binprivate ]]; then
     export PATH=$PATH:$HOME/.binprivate
 fi
 
 # virtualenv
-if [[ -d $HOME/.virtualenvs ]] then
+if [[ -d $HOME/.virtualenvs ]]; then
     plugins+=(virtualenv virtualenvwrapper)
 fi
 # gems
-if [[ -d $HOME/.gem/ruby ]] then
+if [[ -d $HOME/.gem/ruby ]]; then
     for rbbin in `find $HOME/.gem/ruby -mindepth 1 -maxdepth 1 -type d`
     do
         export PATH=$PATH:$rbbin/bin
     done
 fi
 # rbenv
-if [[ -d $HOME/.rbenv ]] then
+if [[ -d $HOME/.rbenv ]]; then
     plugins+=(rbenv)
     export PATH=$PATH:$HOME/.rbenv/bin
     eval "$(rbenv init -)"
 fi
 
 # path fixing for tmux in osx
-if [[ -x /usr/libexec/path_helper ]] then
+if [[ -x /usr/libexec/path_helper ]]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
 # Include any local changes
-if [[ -a $HOME/.zshrc.local ]] then
+if [[ -a $HOME/.zshrc.local ]]; then
     source $HOME/.zshrc.local
 fi
 

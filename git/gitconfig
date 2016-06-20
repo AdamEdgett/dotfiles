@@ -55,5 +55,7 @@
     name = Adam Edgett
     email = AdamEdgett@gmail.com
     username = AdamEdgett
+[github]
+    user = AdamEdgett
 [include]
     path = ~/.gitconfig.local

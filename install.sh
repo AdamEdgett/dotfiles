@@ -1,19 +1,9 @@
 #! /bin/bash
-# Oh-My-Zsh
-read -p "Do you want to install Oh-My-Zsh? [Y/n] " -n 1
-echo ""
-if [[ $REPLY  =~ ^[Yy]?$ ]]; then
-    git clone --quiet  https://github.com/robbyrussell/oh-my-zsh.git ~/.zsh
-fi
-
 # Zsh
 read -p "Do you want to setup config files for zsh? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]?$ ]]; then
-    ln -s $PWD/zsh/zshrc ~/.zshrc
-    ln -s $PWD/zsh/aliases.zsh ~/.zsh/custom/aliases.zsh
-    ln -s $PWD/zsh/custom.zsh-theme ~/.zsh/custom/custom.zsh-theme
-    ln -s $PWD/zsh/functions.zsh ~/.zsh/custom/functions.zsh
+    ln -s $PWD/zsh/zshenv ~/.zshenv
 fi
 
 # Bin

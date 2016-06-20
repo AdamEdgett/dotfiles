@@ -1,4 +1,8 @@
 private.zsh
+*.local
 history
 cache
 example*
+zsh/.zcompdump*
+zsh/.zcompcache/
+zsh/.zhistory

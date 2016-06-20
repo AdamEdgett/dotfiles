@@ -1,3 +1,28 @@
+export CLICOLOR=1
+export TERM=xterm-256color
+
+# Custom bin files
+if [[ -d $HOME/.bin ]]; then
+    path+=($HOME/.bin)
+fi
+if [[ -d $HOME/.binprivate ]]; then
+    path+=($HOME/.binprivate)
+fi
+
+# rbenv
+if [[ -d $HOME/.rbenv ]]; then
+    plugins+=(rbenv)
+fi
+
+# Include any local changes
+if [[ -a ${ZDOTDIR:-$HOME}/.zshrc.local ]]; then
+    source ${ZDOTDIR:-$HOME}/.zshrc.local
+fi
+
+if [[ -s ${ZDOTDIR:-$HOME}/.zprezto/init.zsh ]]; then
+    source ${ZDOTDIR:-$HOME}/.zprezto/init.zsh
+fi
+
 export EDITOR="vim"
 alias zedit=" $EDITOR ~/.zshrc; source ~/.zshrc"
 alias aedit=" $EDITOR ~/.zsh/custom/aliases.zsh; source ~/.zshrc"
@@ -15,14 +40,11 @@ pics=~/Pictures
 musc=~/Music
 vids=~/Videos
 
+df=~/.dotfiles
+dv=~/.vim
+
 sysd=/usr/lib/systemd/system
 
-# Shortcuts #
-#############
-alias c="clear"
-alias :q="exit"
-
-##### standard aliases (start with a space to be ignored in history)
 alias ls=" ls -1 --color"
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 if [[ "$(uname)" = "Darwin" ]] then
@@ -30,11 +52,23 @@ if [[ "$(uname)" = "Darwin" ]] then
     export CLICOLORS=1
 fi
 
+# ls on every cd
+function chpwd() {
+    emulate -L zsh
+    ls -1G
+}
+
 alias l=" ls"
 alias ll=" ls -l"
 alias la=" ls -A"
 alias lla=" ls -lA"
 
+#
+# Shortcuts #
+#############
+alias c="clear"
+alias :q="exit"
+alias f='find . -name'
 alias p=" ps aux | grep"
 alias g="git"
 alias v="vim"
@@ -44,9 +78,8 @@ alias ka="killall"
 alias mv="mv -i"
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 
-alias ..=" cd .."
-alias ...=" cd ..; cd .."
-alias ....=" cd ..; cd ..; cd .."
-alias cd..=".."
-alias cd...="..."
-alias cd....="...."
+# moves file to trash
+# assumes trash is located at ~/.Trash
+function trash() {
+    mv $1 ~/.Trash/.
+}

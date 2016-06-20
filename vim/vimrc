@@ -90,6 +90,8 @@ set number              " line numbers
 set cursorline          " current line indicator
 set scrolloff=14        " adds padding to the current line
 set showmatch           " highlights matching bracket
+set splitright          " sp opens new file in right pane
+set splitbelow          " vsp opens new file in bottom pane
 
 set background=dark
 let g:solarized_termcolors=16

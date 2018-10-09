@@ -1,6 +1,8 @@
 export CLICOLOR=1
 export TERM=xterm-256color
 
+eval "$(direnv hook zsh)"
+
 # Custom bin files
 if [[ -d $HOME/.bin ]]; then
     path+=($HOME/.bin)

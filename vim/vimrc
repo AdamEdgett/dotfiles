@@ -144,6 +144,30 @@ map <C-n>  :NERDTreeToggle<CR>
 " Ctrl P
 map <C-l> :CtrlPBuffer<CR>
 
+" Syntastic
+" let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_javascript_checkers = ['eslint']
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+    let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+    let g:syntastic_javascript_eslint_exec = local_eslint
+endif
+
+let g:ale_completion_enabled = 1
+let g:ale_lint_delay = 750
+let g:ale_typescript_tslint_rules_dir = '.'
+let g:airline#extensions#ale#enabled = 1
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+let local_tslint = finddir('node_modules', '.;') . '/.bin/tslint'
+if matchstr(local_tslint, "^\/\\w") == ''
+    let local_tstlint = getcwd() . "/" . local_tslint
+endif
+if executable(local_eslint)
+    let g:syntastic_typescript_tslint_exec = local_tslint
+endif
+
 " Markdown
 let g:vim_markdown_folding_disabled=1
 

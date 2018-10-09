@@ -15,6 +15,10 @@ if [[ -d $HOME/.rbenv ]]; then
     #plugins+=(rbenv)
 fi
 
+if [[ -d $HOME/.pyenv ]]; then
+    eval "$(pyenv init -)"
+fi
+
 # Include any local changes
 if [[ -a ${ZDOTDIR:-$HOME}/.zshrc.local ]]; then
     source ${ZDOTDIR:-$HOME}/.zshrc.local

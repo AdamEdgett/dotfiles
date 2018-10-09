@@ -17,6 +17,8 @@
     r = remote
     b = branch
     l = log --pretty=format:'%Cred%h%Creset%x09  %Cgreen%ad%Creset%x09%C(bold blue)%an%Creset: %s'
+    wip = commit -am "WIP"
+    edit = !$EDITOR `git ls-files -m`
     sha = rev-parse --short HEAD
     pullall = !pullall
     graph = !git l --graph

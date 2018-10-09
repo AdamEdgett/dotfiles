@@ -112,8 +112,6 @@ set ttimeoutlen=100
 " Whitespace
 set listchars=tab:→\ ,nbsp:·,trail:$
 set list
-let &colorcolumn=join(range(81,300),",")
-highlight ColorColumn ctermbg=0 guibg=#808080
 highlight SignColumn ctermbg=232 guibg=#000000
 
 " Airline

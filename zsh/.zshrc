@@ -31,7 +31,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export EDITOR="nvim"
-alias zedit=" $EDITOR ~/.zshrc; source ~/.zshrc"
+alias sourcezsh="source $ZDOTDIR/.zshrc"
+alias zedit=" $EDITOR ~/.zshrc; sourcezsh"
 alias aedit=" $EDITOR ~/.zsh/custom/aliases.zsh; source ~/.zshrc"
 alias fedit=" $EDITOR ~/.zsh/custom/functions.zsh; source ~/.zshrc"
 alias pedit=" $EDITOR ~/.zsh/custom/private.zsh; source ~/.zshrc"

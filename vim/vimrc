@@ -105,6 +105,13 @@ colorscheme OceanicNext
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 let g:colors_name='OceanicNext'
+
+set t_ZH=[23
+set t_ZR=[23m
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight Comment cterm=italic gui=italic
+highlight Identifier cterm=italic gui=italic
 set laststatus=2
 set noshowmode          " hide the current mode
 set ttimeoutlen=100

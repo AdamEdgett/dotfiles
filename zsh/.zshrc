@@ -28,6 +28,8 @@ if [[ -s ${ZDOTDIR:-$HOME}/.zprezto/init.zsh ]]; then
     source ${ZDOTDIR:-$HOME}/.zprezto/init.zsh
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export EDITOR="vim"
 alias zedit=" $EDITOR ~/.zshrc; source ~/.zshrc"
 alias aedit=" $EDITOR ~/.zsh/custom/aliases.zsh; source ~/.zshrc"

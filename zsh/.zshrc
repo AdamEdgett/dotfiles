@@ -11,7 +11,8 @@ fi
 
 # rbenv
 if [[ -d $HOME/.rbenv ]]; then
-    plugins+=(rbenv)
+    #eval "$(rbenv init -)"
+    #plugins+=(rbenv)
 fi
 
 # Include any local changes
